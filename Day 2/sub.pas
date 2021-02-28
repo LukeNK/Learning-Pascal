@@ -1,20 +1,30 @@
 program sub;
 
 var
-    n, sum, p1, p2, max, l1, l2, l3, l4 : cardinal;
+    n, s, sum, min, l1, l2: cardinal;
     arr : array [1..100000] of cardinal;
     f, fo : text;
     
 begin
     assign(f, 'input.inp'); reset(f);
-    assign(f, 'output.out'); rewrite(f0);
+    assign(fo, 'output.out'); rewrite(fo);
+    while not(eof(f)) do begin
+        readln(f, n, s);
+        for l1 := 1 to n do read(f, arr[l1]);
+        readln(f);
+        min := n;
         for l1 := 1 to n do begin
-            readln(f, n, )
+            sum := 0;
+            for l2 := l1 to n do begin
+                sum := sum + arr[l2];
+                if (sum >= s) and (l2-l1+1 < min) then begin
+                    min := l2-l1+1;
+                    break;
+                end;
+            end;
         end;
-    close(f);
-
-    
-        writeln(f, max);
-        writeln(f, p1, ' ', p2);
+        writeln(fo, min);
+    end;
+    close(fo);
     close(f);
 end.
