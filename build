@@ -1,0 +1,11 @@
+#!/bin/bash
+fpc "$1.pas"
+clear
+echo "[input.inp] -------------------->"
+cat input.inp
+echo "[$1] -------------------->"
+./$1
+echo "[output.out] -------------------->"
+cat output.out
+rm "$1"
+rm "$1.o"

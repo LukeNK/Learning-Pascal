@@ -1,5 +1,6 @@
 program cau4;
 
+
 var
     l1 : integer;
     arr : array [1..1000] of integer;
