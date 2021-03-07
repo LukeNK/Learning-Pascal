@@ -1,5 +1,5 @@
 #!/bin/bash
-fpc $1.pas | grep --color -i 'warning\|error\|fatal'
+fpc $1.pas | grep 'warning\|error\|fatal'
 echo "[input.inp] -------------------->"
 cat input.inp
 echo "[$1] -------------------->"
